@@ -7,9 +7,23 @@
 
 	<display-name>kuyer-rpc</display-name>
 	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:application-rpc-demo.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
 	<servlet>
 		<servlet-name>kuyer-rpc</servlet-name>
 		<servlet-class>io.github.kuyer.rpc.channel.HttpChannelServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:servlet-rpc-demo.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+		<async-supported>true</async-supported>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>kuyer-rpc</servlet-name>

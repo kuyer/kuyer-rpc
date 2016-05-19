@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="/HelloRpcApi" class="io.github.kuyer.rpc.channel.HttpChannelExporter">
+		<property name="service" ref="helloRpcService" />
+		<property name="serviceInterface" value="io.github.kuyer.rpc.demo.api.HelloRpcApi" />
+	</bean>
+	
+	<bean name="/CustomerApi" class="io.github.kuyer.rpc.channel.HttpChannelExporter">
+		<property name="service" ref="customerService" />
+		<property name="serviceInterface" value="io.github.kuyer.rpc.demo.api.CustomerApi" />
+	</bean>
+
+</beans>

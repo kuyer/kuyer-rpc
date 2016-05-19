@@ -1,16 +1,19 @@
 package io.github.kuyer.rpc.demo.service;
 
-import io.github.kuyer.rpc.demo.api.CustomerApi;
-import io.github.kuyer.rpc.demo.api.model.CustomerModel;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import io.github.kuyer.rpc.demo.api.CustomerApi;
+import io.github.kuyer.rpc.demo.api.model.CustomerModel;
 
 /**
  * 客户API接口实现
  * @author Rory.Zhang
  */
+@Service
 public class CustomerService implements CustomerApi {
 
 	@Override
