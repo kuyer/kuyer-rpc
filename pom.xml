@@ -11,7 +11,7 @@
 	<artifactId>kuyer-rpc</artifactId>
 	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.build.timestamp.format>yyyy-MM-dd_HH:mm:ss</maven.build.timestamp.format>
@@ -69,5 +69,19 @@
             </plugin>
 		</plugins>
 	</build>
+	
+	<developers>
+		<developer>
+			<name>rory.zhang</name>
+			<email>coolrl@126.com</email>
+		</developer>
+	</developers>
+	
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
 
 </project>
