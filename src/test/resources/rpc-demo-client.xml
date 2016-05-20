@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="classpath:rpc-demo-client.properties" />
+	
+	<bean id="helloRpcApi" class="io.github.kuyer.rpc.channel.HttpChannelProxy">
+		<property name="serviceUrl" value="${kuyer.rpc.api.url}/HelloRpcApi" />
+		<property name="serviceInterface" value="io.github.kuyer.rpc.demo.api.HelloRpcApi" />
+	</bean>
+	
+	<bean id="customerApi" class="io.github.kuyer.rpc.channel.HttpChannelProxy">
+		<property name="serviceUrl" value="${kuyer.rpc.api.url}/CustomerApi" />
+		<property name="serviceInterface" value="io.github.kuyer.rpc.demo.api.CustomerApi" />
+	</bean>
+
+</beans>
