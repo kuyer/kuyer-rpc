@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       		
+	<context:component-scan base-package="io.github.kuyer.rpc.demo.service" />
+	
+	<bean id="nettyServerHandler" class="io.github.kuyer.rpc.handler.NettyServerHandler"></bean>
+	<bean id="nettyChannelServerInitializer" class="io.github.kuyer.rpc.channel.NettyChannelServerInitializer">
+		<property name="handler" ref="nettyServerHandler" />
+	</bean>
+	<bean id="nettyChannelServer" class="io.github.kuyer.rpc.channel.NettyChannelServer">
+		<property name="channelInitializer" ref="nettyChannelServerInitializer" />
+	</bean>
+
+</beans>

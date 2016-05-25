@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="classpath:rpc-demo-client.properties" />
+	
+	<bean id="nettyClientHandler" class="io.github.kuyer.rpc.handler.NettyClientHandler" />
+	
+	<bean id="nettyChannelClientInitializer" class="io.github.kuyer.rpc.channel.NettyChannelClientInitializer">
+		<property name="handler" ref="nettyClientHandler" />
+	</bean>
+	
+	<bean id="hettyChannelClient" class="io.github.kuyer.rpc.channel.NettyChannelClient">
+		<property name="host" value="${kuyer.rpc.host}" />
+		<property name="channelInitializer" ref="nettyChannelClientInitializer" />
+	</bean>
+	
+	<bean id="helloRpcApi" class="io.github.kuyer.rpc.channel.NettyChannelProxy">
+		<property name="serviceApi" value="io.github.kuyer.rpc.demo.api.HelloRpcApi" />
+	</bean>
+	
+	<bean id="customerApi" class="io.github.kuyer.rpc.channel.NettyChannelProxy">
+		<property name="serviceApi" value="io.github.kuyer.rpc.demo.api.CustomerApi" />
+	</bean>
+
+</beans>
