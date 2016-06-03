@@ -10,7 +10,7 @@
 	<groupId>io.github.kuyer</groupId>
 	<artifactId>kuyer-rpc</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -87,6 +87,35 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
+		</dependency>
+		<!-- protobuf -->
+		<dependency>
+		    <groupId>io.protostuff</groupId>
+		    <artifactId>protostuff-core</artifactId>
+		    <version>1.4.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.protostuff</groupId>
+		    <artifactId>protostuff-runtime</artifactId>
+		    <version>1.4.4</version>
+		</dependency>
+		<!-- kryo -->
+		<dependency>
+		    <groupId>com.esotericsoftware</groupId>
+		    <artifactId>kryo</artifactId>
+		    <version>3.0.3</version>
+		</dependency>
+		<!-- fst -->
+		<dependency>
+		    <groupId>de.ruedigermoeller</groupId>
+		    <artifactId>fst</artifactId>
+		    <version>2.47</version>
+		</dependency>
+		<!-- objenesis -->
+		<dependency>
+		    <groupId>org.objenesis</groupId>
+		    <artifactId>objenesis</artifactId>
+		    <version>2.4</version>
 		</dependency>
 		<!-- Servlet API -->
 		<dependency>
