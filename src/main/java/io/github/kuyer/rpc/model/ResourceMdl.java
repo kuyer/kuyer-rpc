@@ -3,7 +3,7 @@ package io.github.kuyer.rpc.model;
 import java.io.Serializable;
 
 /**
- * 资源信息（name & ip & port 唯一）
+ * 资源信息（name & version & ip & port 唯一）
  * @author Rory.Zhang
  */
 public class ResourceMdl implements Serializable {
@@ -12,6 +12,8 @@ public class ResourceMdl implements Serializable {
 	
 	/** 服务名称 **/
 	private String name;
+	/** 版本号 **/
+	private String version;
 	/** 主机IP **/
 	private String ip;
 	/** 占用端口 **/
@@ -26,6 +28,12 @@ public class ResourceMdl implements Serializable {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getVersion() {
+		return version;
+	}
+	public void setVersion(String version) {
+		this.version = version;
 	}
 	public String getIp() {
 		return ip;
